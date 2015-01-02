@@ -1,5 +1,6 @@
 package com.company.web.config;
 
+import com.company.core.repo.UserRepository;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -33,7 +34,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
     localeChangeInterceptor.setParamName("lang");
     registry.addInterceptor(localeChangeInterceptor);
-    registry.addInterceptor(new AuthableInterceptor());
   }
 
   @Bean
@@ -64,4 +64,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     return messageSource;
   }
 
+  @Bean
+  public UserRepository userRepository() {
+    return new UserRepository();
+  }
 }

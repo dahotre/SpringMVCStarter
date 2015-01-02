@@ -78,7 +78,7 @@
   <footer class="container">
     <div class="row">
       <div class="col-xs-12">
-        &copy; ${appName}, 2014
+        &copy; ${appName}, 2015
       </div>
     </div>
     <%-- JavaScript Libs And main application.js
